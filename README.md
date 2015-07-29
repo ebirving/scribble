@@ -1,2 +1,2 @@
 ## ERD
-![Scribble ERD] (/public/scribble-erd.png)
+![Scribble ERD] (scribble-erd.jpg)
