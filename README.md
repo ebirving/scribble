@@ -1,2 +1,2 @@
 ## ERD
-https://www.dropbox.com/s/fpd38yyjf118wfx/scribble-erd.png?dl=0
+https://www.dropbox.com/s/vgxcwi2z1tqx1v8/scribble-erd.pdf?dl=0
