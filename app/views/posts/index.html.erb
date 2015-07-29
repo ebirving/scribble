@@ -1,0 +1,21 @@
+<div>
+  <% @posts.each do |post| %>
+    <div class= "post">
+      <div>
+        <%=post.title%>
+      </div>
+
+      <div>
+        <%=post.content%>
+      </div>
+
+      <div>
+        <% if post.created_at > post.updated_at %>
+          Posted by <%=post.author%> <%=post.created_at.strftime("on %A, %B %d, %Y at %I:%M %p")%>
+        <% else %>
+          Updated by <%=post.author%> <%=post.updated_at.strftime("on %A, %B %d, %Y at %I:%M %p")%>
+        <% end %>
+      </div>
+    </div>
+  <%end %>
+</div>

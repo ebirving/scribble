@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+div.post {
+  margin: 50px;
+
+}
+
+#scribble-logo {
+  width: 200px;
+}

@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= image_tag "scribble-logo.png", alt: "Scribble Logo", id: "scribble-logo" %>
+    <%= link_to "New Post", new_post_path %>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
+  <footer>
+    <p>Scribble is a Ruby on Rails writing application where users can read, write, and interact with the best content all around the world. Get hip.</p>
+  </footer>
 </body>
 </html>
