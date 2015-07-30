@@ -2,17 +2,18 @@
 <div>
   <% @posts.each do |post| %>
     <div class= "post">
-      <div>
-        <%=link_to "#{post.title}", post%>
+      <div class= "post_title">
+        <%= post.title %>
       </div>
 
-      <div>
-        <%=truncate(post.content, length: 280)%><%= link_to "Keep Reading", post_path(post) %>
-      </div>
-
-      <div>
+      <div class= "byline">
         Updated by <%=post.author%> <%=time_ago_in_words(post.updated_at)%> ago
       </div>
+
+      <div class= "post_content">
+        <%=truncate(post.content, length: 280)%> <%= link_to "Keep Reading", post_path(post), class: "jump" %>
+      </div>
+
     </div>
   <%end %>
 </div>

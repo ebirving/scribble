@@ -1,0 +1,23 @@
+
+.jump {
+  color: #ea473b;
+}
+
+.post_title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.post_content {
+  margin: .5em 0 2em 0;
+  line-height: 1.4em;
+}
+
+.byline {
+  font-style: italic;
+  font-size: .75em;
+}
+
+.post {
+  border-bottom: 1px solid dodgerblue
+}
