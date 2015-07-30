@@ -7,7 +7,7 @@
       </div>
 
       <div>
-        <%=post.content%>
+        <%=truncate(post.content, length: 280)%><%= link_to "Keep Reading", post_path(post) %>
       </div>
 
       <div>
