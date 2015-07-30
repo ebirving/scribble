@@ -1,4 +1,4 @@
-<!-- Figure out how to order these by created by date/time -->
+<!-- Figure out how to order these by created by date/time AND do an after the jump char limit-->
 <div>
   <% @posts.each do |post| %>
     <div class= "post">
@@ -17,7 +17,6 @@
           Updated by <%=post.author%> <%=post.updated_at.strftime("on %A, %B %d, %Y at %I:%M %p")%>
         <% end %>
       </div>
-      <%= link_to "View Comments", post_comments_path(post, post.comments) %>
     </div>
   <%end %>
 </div>
