@@ -17,6 +17,13 @@
           Updated by <%=post.author%> <%=post.updated_at.strftime("on %A, %B %d, %Y at %I:%M %p")%>
         <% end %>
       </div>
+      <%= link_to "View Comments", post_comments_path(post, post.comments) %>
     </div>
   <%end %>
+</div>
+
+<div>
+  <!-- Figure out how to order these by created by date/time -->
+  <h3>Comments</h3>
+
 </div>
