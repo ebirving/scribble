@@ -1,4 +1,3 @@
-<div class= "post">
   <div class= "post_title">
     <%= @post.title %>
   </div>
@@ -9,25 +8,29 @@
 
   <div class= "post_content">
     <%= @post.content %>
+    <%= link_to "Edit This Post", edit_post_path, class: "post_edit_button" %>
   </div>
 
-</div>
-<%= link_to "Edit This Post", edit_post_path %>
-<h3>Comments</h3>
-<div>
+<div class= "comments">
+  <h3>Comments</h3>
   <% @comments.each do |comment| %>
-    <%=comment.content%> - <%=comment.author%> - <%=comment.created_at.strftime("%A, %B %d, %Y - %I:%M %p %Z")%>
-    <%= link_to "Edit This Comment", edit_post_comment_path(@post, comment) %>
-<%end %>
+    <div>
+    "<%=comment.content%>"
+    <span class= "comment_authordate"> <%=comment.author%>, <%=comment.created_at.strftime("%A, %B %d, %Y - %I:%M %p %Z")%>
+    <%= link_to "Edit This Comment", edit_post_comment_path(@post, comment), class: "comment_edit_button"%></span>
+    </div>
+    <%end %>
 </div>
 
+<div class= "new_comment">
 <h3>Have Your Say</h3>
 <%= form_for [@post, @comment] do |f| %>
-  <%= f.label :author %>
+  <%= f.label :author, "Name" %>
   <%= f.text_field :author %>
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.label :content, "Comment" %>
+  <%= f.text_area :content %>
 
-  <%= f.submit %>
+  <%= f.submit "Submit" %>
 <% end %>
+</div>

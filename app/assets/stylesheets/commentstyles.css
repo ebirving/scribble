@@ -1,0 +1,21 @@
+.comments {
+  border-top: 1.5px solid dodgerblue;
+}
+
+.comment_edit_button {
+  color: #ea473b;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.comment_authordate {
+  font-size: .75em;
+}
+
+.new_comment {
+  background: #e8f3ff;
+  margin-top: 2em;
+  border-radius: 1em;
+  padding: .2em .5em 1.2em .5em;
+}

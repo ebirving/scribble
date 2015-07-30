@@ -1,7 +1,6 @@
 <!-- Figure out how to order these by created by date/time AND do an after the jump char limit-->
-<div>
   <% @posts.each do |post| %>
-    <div class= "post">
+    <div class= "post_preview">
       <div class= "post_title">
         <%= post.title %>
       </div>
@@ -13,7 +12,5 @@
       <div class= "post_content">
         <%=truncate(post.content, length: 280)%> <%= link_to "Keep Reading", post_path(post), class: "jump" %>
       </div>
-
     </div>
   <%end %>
-</div>
