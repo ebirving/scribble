@@ -1,7 +1,0 @@
-<h3>Comments</h3>
-<div>
-  <% @comments.each do |comment| %>
-    <%=comment.content%> - <%=comment.author%> - <%=comment.created_at.strftime("%A, %B %d, %Y - %I:%M %p %Z")%>
-    <%= link_to "Edit This Comment", edit_post_comment_path(@post, comment) %>
-<%end %>
-</div>

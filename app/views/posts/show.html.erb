@@ -16,8 +16,12 @@
   </div>
 </div>
 <%= link_to "Edit This Post", edit_post_path %>
+<h3>Comments</h3>
 <div>
-  <%= render partial: "comments" %>
+  <% @comments.each do |comment| %>
+    <%=comment.content%> - <%=comment.author%> - <%=comment.created_at.strftime("%A, %B %d, %Y - %I:%M %p %Z")%>
+    <%= link_to "Edit This Comment", edit_post_comment_path(@post, comment) %>
+<%end %>
 </div>
 <h3>Have Your Say</h3>
 <%= form_for [@post, @comment] do |f| %>
