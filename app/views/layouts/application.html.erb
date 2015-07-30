@@ -12,12 +12,17 @@
   <header>
     <nav>
       <%= link_to "HOME", posts_path %>
-      <a>Sign Up</a>
-      <a>Sign In</a>
-      <a>Sign Out</a>
+      <% if session[:user] %>
+        <a href="/sign_out">Sign Out
+         (<%=session[:user]["username"] %>)</a>
+      <% else %>
+        <a href="/sign_up">Sign Up</a>
+        <a href="/sign_in">Sign In</a>
+      <% end %>
       <%= link_to "New Post", new_post_path %>
     </nav>
   </header>
+      <h2><%= flash[:notice] %></h2>
   <main>
     <%= yield %>
   </main>
