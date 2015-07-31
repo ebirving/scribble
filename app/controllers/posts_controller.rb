@@ -17,7 +17,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(post_params)
+    @user = User.find(session[:user]["id"])
+    @post = @user.posts.create!(post_params)
     redirect_to post_path(@post)
   end
 
