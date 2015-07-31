@@ -8,7 +8,7 @@
 - [ ] As a user I want to delete my comments on others' posts.
 
 ## ERD
-https://www.dropbox.com/s/vgxcwi2z1tqx1v8/scribble-erd.pdf?dl=0
+https://www.dropbox.com/s/g68tkombmjds3sy/scribble-erd.tiff?dl=0
 
 ## Deployed Site
 https://dashboard.heroku.com/apps/warm-shore-1156/settings
