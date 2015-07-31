@@ -7,11 +7,13 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @user = User.find(session[:user]["id"])
     @comment = Comment.find(params[:id])
     @post = @comment.post
   end
 
   def update
+    @user = User.find(session[:user]["id"])
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to post_path(@comment.post)

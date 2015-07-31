@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user]["id"])
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
@@ -12,15 +13,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @user = User.find(session[:user]["id"])
   end
 
   def create
-    @user = User.find(session[:user]["id"])
     @post = Post.create!(post_params)
     redirect_to post_path(@post)
   end
 
   def edit
+    @user = User.find(session[:user]["id"])
     @post = Post.find(params[:id])
   end
 
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :author, :content)
+    params.require(:post).permit(:title, :author, :content, :user_id)
+
   end
 end

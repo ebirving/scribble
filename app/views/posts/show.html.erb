@@ -8,7 +8,9 @@
 
   <div class= "post_content">
     <%= @post.content %>
-    <%= link_to "Edit This Post", edit_post_path, class: "post_edit_button" %>
+    <% if @post.author == @user.username %>
+      <%= link_to "Edit/Delete This Post", edit_post_path, class: "post_edit_button" %>
+    <% end %>
   </div>
 
 <div class= "comments">
@@ -17,7 +19,10 @@
     <div>
     "<%=comment.content%>"
     <span class= "comment_authordate"> <%=comment.author%>, <%=comment.created_at.strftime("%A, %B %d, %Y - %I:%M %p %Z")%>
-    <%= link_to "Edit This Comment", edit_post_comment_path(@post, comment), class: "comment_edit_button"%></span>
+    <% if @post.author == @user.username %>
+      <%= link_to "Edit/Delete This Comment", edit_post_comment_path(@post, comment), class: "comment_edit_button"%>
+    <% end %>
+    </span>
     </div>
     <%end %>
 </div>
@@ -26,7 +31,7 @@
 <h3>Have Your Say</h3>
 <%= form_for [@post, @comment] do |f| %>
   <%= f.label :author, "Name" %>
-  <%= f.text_field :author %>
+  <%= f.text_field :author, value: @user.username, readonly: true %>
 
   <%= f.label :content, "Comment" %>
   <%= f.text_area :content %>

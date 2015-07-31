@@ -3,7 +3,7 @@
   <%= f.text_field :title %>
 
   <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.text_field :author, value: @user.username, readonly: true %>
 
   <%= f.label :content %>
   <%= f.text_area :content, :size => "70x30", :wrap => "hard" %>
